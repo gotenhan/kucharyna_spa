@@ -1,8 +1,8 @@
 App.Router.map( ->
   @route "home"
-  @resource("recipes", -> )
-  @resource("recipe", path: "/recipes/:id")
+  @resource "recipes", ->
+    @route 'index', path: '/'
+    @route 'new', path: '/new'
+    @route 'show', path: '/:recipe_id'
+    @route 'edit', path: '/:recipe_id/edit'
 )
-
-App.RecipesRoute = Ember.Route.extend
-  model: -> App.Recipe.find()

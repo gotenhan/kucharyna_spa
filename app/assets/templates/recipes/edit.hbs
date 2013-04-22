@@ -1,0 +1,25 @@
+<form>
+  <fieldset>
+    <div class="page-header">
+      {{view Ember.TextField valueBinding="name"}}
+      <div class="btn-group">
+        <button class="btn" {{action cancel}}>Anuluj</button>
+        <button class="btn" {{action save}}>Zapisz</button>
+      </div>
+    </div>
+    <h2>Opis:</h2>
+      {{view Ember.TextArea valueBinding="description" rows="4"}}
+    <h2>Składniki:</h2>
+    <ul>
+      {{#each ingredients}}
+      <li>{{render "ingredient.show" this}}</li>
+      {{/each}}
+    </ul>
+    <h2>Instrukcje:</h2>
+    <ul>
+      {{#each steps}}
+      <li>{{this}}</li>
+      {{/each}}
+    </ul>
+  </fieldset>
+</form>
