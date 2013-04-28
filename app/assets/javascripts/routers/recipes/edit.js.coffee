@@ -1,8 +1,8 @@
 App.RecipesEditRoute = Ember.Route.extend
   events:
     save: ->
-      @get('store').get('defaultTransaction').commit()
-      @get('router').transitionTo('recipes.show', this.controller)
+      @getPath('store.defaultTransaction').commit()
+      @getPath('router').transitionTo('recipes.show', @controller)
     cancel: ->
-      @get('store').get('defaultTransaction').rollback()
-      @get('router').transitionTo('recipes.show', this.controller)
+      @getPath('store.defaultTransaction').rollback()
+      @get('router').transitionTo('recipes.show', @controller)

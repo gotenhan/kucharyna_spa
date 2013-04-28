@@ -12,7 +12,7 @@
     <h2>Składniki:</h2>
     <ul>
       {{#each ingredients}}
-      <li>{{render "ingredient.show" this}}</li>
+      <li>{{this.name}} {{render "ingredients.edit" this}}</li>
       {{/each}}
     </ul>
     <h2>Instrukcje:</h2>
