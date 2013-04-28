@@ -9,10 +9,15 @@
     </div>
     <h2>Opis:</h2>
       {{view Ember.TextArea valueBinding="description" rows="4"}}
-    <h2>Składniki:</h2>
+    <h2>
+      Składniki: <button class="btn" {{action addIngredient}}>Dodaj</button>
+    </h2>
     <ul>
       {{#each ingredients}}
-      <li>{{this.name}} {{render "ingredients.edit" this}}</li>
+      <li>
+        {{render "ingredients.edit" this}}
+        <button class="btn" {{action removeIngredient this}}>Usuń</button>
+      </li>
       {{/each}}
     </ul>
     <h2>Instrukcje:</h2>
