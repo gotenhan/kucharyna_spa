@@ -1,6 +1,7 @@
 <form>
   <fieldset>
     <div class="page-header">
+      <h1>Edytuj przepis</h1>
       {{view Ember.TextField valueBinding="name"}}
       <div class="btn-group">
         <button class="btn" {{action cancel}}>Anuluj</button>
@@ -8,23 +9,17 @@
       </div>
     </div>
     <h2>Opis:</h2>
-      {{view Ember.TextArea valueBinding="description" rows="4"}}
+      {{view Ember.TextArea valueBinding="description" rows="4" class="input-block-level"}}
     <h2>
       Składniki: <button class="btn" {{action addIngredient}}>Dodaj</button>
     </h2>
     <ul>
-      {{#each ingredients}}
-      <li>
+      {{#each ingredients itemTagName="li"}}
         {{render "ingredients.edit" this}}
         <button class="btn" {{action removeIngredient this}}>Usuń</button>
-      </li>
       {{/each}}
     </ul>
     <h2>Instrukcje:</h2>
-    <ul>
-      {{#each steps}}
-      <li>{{this}}</li>
-      {{/each}}
-    </ul>
+    {{view Ember.TextArea valueBinding="rawSteps" rows="6" class="input-block-level"}}
   </fieldset>
 </form>

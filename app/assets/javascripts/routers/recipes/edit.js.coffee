@@ -1,4 +1,7 @@
 App.RecipesEditRoute = Ember.Route.extend
+  setupController: (controller) ->
+    controller.setupRawSteps()
+
   events:
     save: ->
       @get('store.defaultTransaction').commit()

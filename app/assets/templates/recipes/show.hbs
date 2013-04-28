@@ -1,18 +1,21 @@
-<div class="page-header"><h1>{{name}}</h1></div>
-<div class="btn-grp">
-  {{#linkTo "recipes.edit" this class="btn"}}Edytuj{{/linkTo}}
+<div class="page-header">
+  <h1>{{name}}</h1>
+  <div class="btn-group">
+    {{#linkTo "recipes.index" class="btn"}}Powrót{{/linkTo}}
+    {{#linkTo "recipes.edit" this class="btn"}}Edytuj{{/linkTo}}
+  </div>
 </div>
 <h2>Opis:</h2>
 <p>{{description}}</p>
 <h2>Składniki:</h2>
 <ul>
-  {{#each ingredients}}
-    <li>{{render "ingredients.show" this}}</li>
+  {{#each ingredients itemTagName="li"}}
+    {{render "ingredients.show" this}}
   {{/each}}
 </ul>
 <h2>Instrukcje:</h2>
 <ul>
-  {{#each steps}}
-  <li>{{this}}</li>
+  {{#each steps itemTagName="li"}}
+    {{this}}
   {{/each}}
 </ul>

@@ -1,6 +1,8 @@
-<div class="page-header"><h1>Kucharyna recipes page</h1></div>
+<div class="page-header">
+  <h1>Wszystkie przepisy</h1>
+</div>
 <ul>
-  {{#each model}}
-  <li>{{#linkTo "recipes.show" this}}{{name}}{{/linkTo}}</li>
+  {{#each controller itemTagName="li"}}
+    {{#linkTo "recipes.show" this}}{{name}}{{/linkTo}}
   {{/each}}
 </ul>
